@@ -1,69 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of [Your Name], a Computer Science student showcasing projects and skills.">
-    <title>[Your Name] - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+<html lang="en" class="no-js">
+<head itemscope itemtype="http://schema.org/WebSite">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Riccardo Zanutta - Interactive Frontend Developer</title>
+    <meta name="description" content="Riccardo Zanutta personal portfolio's website.">
+    <link type="text/plain" rel="author" href="humans.txt">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-tap-highlight" content="no">
+    <style>
+        body {
+            background-color: #252a60 !important;
+        }
+        body.loaded {
+            background-color: #f3f3f3 !important;
+        }
+        #page-wrap {
+            opacity: 0;
+        }
+        .loaded #page-wrap {
+            opacity: 1;
+        }
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #252a60;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.7s, visibility 0.7s, z-index 0.7s;
+            z-index: 61;
+        }
+        #loader.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            z-index: -1;
+        }
+        .no-js #loader {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="css/application.css">
+    <link rel="canonical" href="http://riccardozanutta.com/" itemprop="url">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Riccardo Zanutta - Interactive Frontend Developer">
+    <meta name="google-site-verification" content="Vv6Ab5p4eW3hXGhlz5FEzlS7BAR-3yL3s6Hwt0XRTTs">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#191a21">
+    <meta name="theme-color" content="#191a21">
 </head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+<body itemscope itemtype="http://schema.org/WebPage">
+    <div id="loader">
+        <div class="loader-content">
+            <div class="stripe-loader">
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+            </div>
+        </div>
+    </div>
+    <div id="page-wrap">
+        <nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="main-navigation">
+            <div class="content nav-content">
+                <a href="/" data-destination="home" itemprop="url" class="nav-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+                        <path fill="#FFF" d="M53.2 145.1l81.9-71.7h-34.3L19 145.1l102.8 90h34.3l-102.9-90"></path>
+                    </svg>
+                    <span itemprop="name" class="visual-hide">Home</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#case-studies" data-scroll itemprop="url">Case Studies</a></li>
+                    <li><a href="#experiments" data-scroll itemprop="url">Experiments</a></li>
+                    <li><a href="#" class="no-smoothState open-contact">Contact</a></li>
+                </ul>
+            </div>
         </nav>
-        <div class="hero">
-            <h1>Welcome to My Portfolio</h1>
-            <p>I am [Your Name], a passionate Computer Science student.</p>
+        <header id="top" class="main-hero">
+            <div class="main-hero-text">
+                <div class="content">
+                    <h1 itemprop="author">Riccardo Zanutta</h1>
+                    <h3 itemprop="specialty" class="h5">Interactive Front-end Developer</h3>
+                    <a href="#" class="the-button call-to-button no-smoothstate open-contact">
+                        <span class="button-text">About Me</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section id="case-studies" class="case-studies-section">
+                <div class="content">
+                    <h4 class="h5 section-subtitle">Case Studies</h4>
+                    <h2 class="h3 section-title">Latest Works</h2>
+                    <ul class="case-studies-list">
+                        <li>
+                            <a href="/cerasa" style="background-image: url('img/cerasa-work.jpg');" class="case-study">
+                                <h3 class="case-study-title">Cerasa Redesign</h3>
+                                <h5 class="case-study-subtitle">Leader in bathroom furniture since 1983.</h5>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer class="footer">
+        <div class="content">
+            <a href="#top" class="footer-logo no-smoothstate">
+                <img src="icons/logo-white.svg" alt="Riccardo Zanutta's Personal Logo">
+            </a>
         </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I am [Your Name], currently pursuing a degree in Computer Science at EPFL. I enjoy solving problems, building projects, and learning new technologies. My focus areas include [Your Focus Areas or Skills].</p>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1: [Project Name]</h3>
-            <p>Description: [Brief description of the project and technologies used]</p>
-            <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project">
-            <h3>Project 2: [Project Name]</h3>
-            <p>Description: [Brief description of the project and technologies used]</p>
-            <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
-        </div>
-        <!-- Add more projects as needed -->
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>If you'd like to collaborate or learn more about my work, feel free to reach out!</p>
-        <ul>
-            <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-            <li>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></li>
-        </ul>
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; <span id="year"></span> [Your Name]. All rights reserved.</p>
     </footer>
-
-    <script>
-        // Update footer year dynamically
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/application.js"></script>
 </body>
 </html>
