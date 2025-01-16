@@ -3,39 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <meta name="description" content="Portfolio of [Your Name], a Computer Science student showcasing projects and skills.">
+    <title>[Your Name] - Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hi, I'm Omar El khyari, a Computer Science student at EPFL.</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I am [Your Name], a passionate Computer Science student.</p>
+        </div>
     </header>
 
-    <main>
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li>
-                    <h3>Project 1: Cool App</h3>
-                    <p>A web application that [short description of your project].</p>
-                    <a href="#">View on GitHub</a>
-                </li>
-            </ul>
-        </section>
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I am [Your Name], currently pursuing a degree in Computer Science at EPFL. I enjoy solving problems, building projects, and learning new technologies. My focus areas include [Your Focus Areas or Skills].</p>
+    </section>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>You can reach me at:</p>
-            <ul>
-                <li><a href="https://linkedin.com/in/yourprofile">LinkedIn</a></li>
-                <li>Email: <a href="mailto:your-email@example.com">elkhyariomar2020@gmail.com</a></li>
-            </ul>
-        </section>
-    </main>
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1: [Project Name]</h3>
+            <p>Description: [Brief description of the project and technologies used]</p>
+            <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project">
+            <h3>Project 2: [Project Name]</h3>
+            <p>Description: [Brief description of the project and technologies used]</p>
+            <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
+        </div>
+        <!-- Add more projects as needed -->
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to collaborate or learn more about my work, feel free to reach out!</p>
+        <ul>
+            <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            <li>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></li>
+        </ul>
+    </section>
+
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 Omar El khyari. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> [Your Name]. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Update footer year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
