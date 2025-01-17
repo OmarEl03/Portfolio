@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #adf0d4;
-    --secondary-color: #1fd8a4;
-    --bg-color: #0d1512;
+    --primary-color: #ffffff;
+    --secondary-color: #fffdff;
+    --bg-color: #253733;
 }
 
 * {
@@ -13,7 +13,7 @@
 }
 
 body {
-    background: var(--bg-color);
+    background: var(--bg-color) url('background.jpg') no-repeat center center/cover;
     color: var(--primary-color);
     min-height: 100vh;
     display: flex;
@@ -22,6 +22,7 @@ body {
     padding: 14px;
 }
 
+
 .darkerText {
     color: var(--secondary-color);
 }
@@ -29,6 +30,7 @@ body {
 header,
 main,
 footer {
+    max-width: 900px;
     margin: 0 auto;
     width: 100%;
 }
@@ -87,17 +89,6 @@ section {
     gap: 24px;
 }
 
-.imgContainer {
-    border-radius: 100%;
-    max-width: 114px;
-    overflow: hidden;
-}
-
-.imgContainer img {
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-}
 
 .stats {
     display: flex;
@@ -217,3 +208,75 @@ section {
         margin-right: auto;
     }
 }
+/* Introduction Section */
+.intro-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.imgContainer {
+    flex-shrink: 0;
+    width: 150px; /* Keep it square */
+    height: 150px; /* Keep it square */
+    border-radius: 50%;
+    overflow: hidden; /* Ensures the image doesn't overflow */
+    display: flex;
+    align-items: center; /* Centers the image */
+    justify-content: center;
+}
+
+.imgContainer img {
+    width: 150px; /* Match the container's size */
+    height: 150px; /* Match the container's size */
+    object-fit: cover; /* Ensures the image fits nicely inside */
+    aspect-ratio: 1 / 1; /* Forces the image to be square */
+}
+
+
+.info-container {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.info-container h1 {
+    font-size: 2em;
+    margin-bottom: 8px;
+}
+
+.info-container p {
+    font-size: 1.1em;
+    line-height: 1.6em;
+}
+
+
+nav a {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 3.5em; /* Adjust size as needed */
+    color: var(--secondary-color); /* Matches your theme */
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+nav a i {
+    transition: transform 200ms ease;
+}
+
+nav a:hover i {
+    transform: scale(1.5); /* Slight zoom effect on hover */
+}
+
