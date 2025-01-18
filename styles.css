@@ -1,17 +1,24 @@
+/* Root Variables */
 :root {
-    --primary-color: #ffffff;
-    --secondary-color: #fffdff;
-    --bg-color: #253733;
+    --primary-color: #ffffff; /* Main text color */
+    --secondary-color: #ffffff; /* Secondary text color */
+    --profil-color: #ebb7e3; /* Secondary text color */
+    --bg-color: #253733; /* Background color */
+    --title-color: #6cac8e; /* Highlighted color for project titles */
+    --border-color: rgba(255, 255, 255, 0.1); /* Border color for project items */
+    --background-overlay: rgba(255, 255, 255, 0.05); /* Background overlay for project items */
 }
 
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    transition-duration: 200ms;
+    transition: all 200ms ease-in-out;
 }
 
+/* Body Styles */
 body {
     background: var(--bg-color) url('background.jpg') no-repeat center center/cover;
     color: var(--primary-color);
@@ -22,192 +29,38 @@ body {
     padding: 14px;
 }
 
-
-.darkerText {
-    color: var(--secondary-color);
-}
-
-header,
-main,
-footer {
-    max-width: 900px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-p {
-    font-size: 1.05em;
-}
-
+/* Header and Navigation */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 14px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 nav {
-    color: var(--secondary-color);
     display: flex;
-    align-items: center;
     gap: 32px;
 }
 
 nav a {
-    cursor: pointer;
     text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 2.5em;
 }
 
 nav a:hover {
     opacity: 0.7;
 }
 
-main,
-section,
-.nameContainer {
+/* Main Content */
+main {
     display: flex;
     flex-direction: column;
-}
-
-main {
     gap: 64px;
     padding-bottom: 64px;
 }
 
-section {
-    gap: 48px;
-}
-
-.nameContainer {
-    gap: 8px;
-}
-
-.statsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 24px;
-}
-
-
-.stats {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.stats>div {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.stats div i {
-    font-size: 1.4em;
-}
-
-.stats div div {
-    display: grid;
-    place-items: center;
-    min-width: 40px;
-}
-
-.aboutMe {
-    line-height: 1.5em;
-}
-
-.outreach {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    cursor: pointer;
-    width: fit-content;
-    margin-right: auto;
-}
-
-.outreach:hover {
-    opacity: 0.7;
-}
-
-.outreach i {
-    transform: rotate(-45deg);
-}
-
-.projectContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-}
-
-.headerText {
-    margin-bottom: 24px;
-}
-
-.projectItem {
-    display: flex;
-    align-items: stretch;
-    gap: 24px;
-}
-
-.projectItem div:first-child {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    flex: 1;
-}
-
-.projectItem>div:last-child {
-    aspect-ratio: 16/9;
-    max-width: 30%;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.projectItem>div:last-child img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.linkContainer {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-.linkItem {
-    display: flex;
-    flex-direction: row !important;
-    align-items: center;
-    gap: 14px !important;
-    color: var(--primary-color);
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.linkItem:hover {
-    opacity: 0.7;
-}
-
-.linkItem p {
-    font-size: 0.9em;
-}
-
-@media (min-width: 640px) {
-    .statsContainer {
-        flex-direction: row;
-    }
-
-    .stats {
-        gap: 0px;
-    }
-
-    .aboutMe {
-        width: 80%;
-        margin-right: auto;
-    }
-}
 /* Introduction Section */
 .intro-section {
     display: flex;
@@ -222,61 +75,157 @@ section {
     align-items: center;
     justify-content: center;
     gap: 32px;
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .imgContainer {
-    flex-shrink: 0;
-    width: 150px; /* Keep it square */
-    height: 150px; /* Keep it square */
-    border-radius: 50%;
+    width: 200px; /* Fixed width */
+    height: 200px; /* Fixed height */
+    border-radius: 50%; /* Makes the container circular */
     overflow: hidden; /* Ensures the image doesn't overflow */
     display: flex;
-    align-items: center; /* Centers the image */
-    justify-content: center;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically */
+    flex-shrink: 0; /* Prevents the container from shrinking */
+    flex-grow: 0; /* Prevents the container from growing */
 }
 
 .imgContainer img {
-    width: 150px; /* Match the container's size */
-    height: 150px; /* Match the container's size */
-    object-fit: cover; /* Ensures the image fits nicely inside */
-    aspect-ratio: 1 / 1; /* Forces the image to be square */
+    width: 100%; /* Make the image fill the container */
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire container */
 }
 
 
-.info-container {
-    flex-grow: 1;
-    text-align: left;
-}
 
 .info-container h1 {
-    font-size: 2em;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--profil-color);
     margin-bottom: 8px;
 }
 
 .info-container p {
-    font-size: 1.1em;
+    font-size: 1.45em;
+    color: var(--primary-color);
     line-height: 1.6em;
 }
 
-
-nav a {
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 3.5em; /* Adjust size as needed */
-    color: var(--secondary-color); /* Matches your theme */
+/* Project Container */
+.projectContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    width: 90%; /* Stretch to full width */
+    margin: 0 auto;
 }
 
-nav a:hover {
+/* Section Header */
+.headerText {
+    font-size: 1.8em;
+    color: var(--title-color);
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* Project Item */
+.projectItem {
+    display: flex;
+    flex-direction: column; /* Stack title, content, and image */
+    gap: 16px;
+    padding: 24px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--background-overlay);
+    width: 100%; /* Full-width container */
+}
+
+/* Title */
+.projectItem h2 {
+    font-size: 1.75em;
+    font-weight: bold;
+    color: var(--title-color);
+    text-align: center; /* Center-align the title */
+    margin-bottom: 12px;
+}
+
+/* Content Layout */
+.projectItem .content {
+    display: flex;
+    font-size: 1.25em;
+    flex-direction: row;
+    gap: 24px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+/* Text Section */
+.projectItem .textContainer {
+    flex: 2;
+    text-align: left;
+}
+
+/* Image Section */
+.projectItem .imageContainer {
+    flex: 1;
+    max-width: 300px; /* Initial size */
+    overflow: hidden;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+}
+
+.projectItem .imageContainer img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+}
+
+.projectItem .imageContainer:hover {
+    transform: scale(2); /* Scale the container to 120% */
+}
+
+.projectItem .imageContainer:hover img {
+    transform: scale(1); /* Keep the image scale proportional to the container */
+}
+
+
+
+/* Link Container */
+.linkContainer {
+    margin-top: 16px; /* Space between content and links */
+    text-align: center; /* Center-align links */
+    display: flex;
+    justify-content: center; /* Center-align within container */
+    gap: 16px;
+}
+
+.linkItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.linkItem:hover {
     opacity: 0.7;
 }
 
-nav a i {
-    transition: transform 200ms ease;
-}
+/* Media Queries */
+/* Adjust layout for smaller screens */
+@media (max-width: 768px) {
+    .projectItem .content {
+        flex-direction: column; /* Stack text and image vertically */
+        gap: 16px;
+    }
 
-nav a:hover i {
-    transform: scale(1.5); /* Slight zoom effect on hover */
+    .projectItem .imageContainer {
+        max-width: 100%; /* Adjust image width for smaller screens */
+    }
 }
-
